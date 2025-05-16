@@ -437,13 +437,10 @@
 }
 
 
-.produto a.descricao-btn {
-  background-color: #888;
-  color: white;
-  margin-left: 0.5rem;
+.descricao-produto {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 6px;
 }
-
-.produto a.descricao-btn:hover {
-  background-color: #666;
-}
-

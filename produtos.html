@@ -34,13 +34,27 @@
     </section>
 
     <section id="produtos-lista" class="produtos">
-      <div class="produto" data-tipo="cabelo">
-        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
-        <h3>Concentrado de Vitamina C</h3>
-        <p class="categoria">Cabelo</p>
-        <a href="https://wa.me/5513996518153?text=Olá, quero comprar o Concentrado de Vitamina C" target="_blank">Comprar</a>
-        <a href="descricao-produto1.html" class="descricao-btn">Descrição</a>
-      </div>
+     <div class="produto" data-tipo="cabelo">
+  <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+  <h3>Concentrado de Vitamina C</h3>
+  <p class="categoria">Cabelo</p>
+  <a href="https://wa.me/5513996518153?text=Olá, quero comprar o Concentrado de Vitamina C" target="_blank">Comprar</a>
+  <button class="ver-mais-btn">Ver Mais</button>
+
+  <div class="descricao-produto" style="display: none;">
+    <h4>Descrição</h4>
+    <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+    <h4>Benefícios</h4>
+    <ul>
+      <li>Clareia manchas</li>
+      <li>Melhora a elasticidade</li>
+      <li>Previne sinais de idade</li>
+    </ul>
+    <h4>Como usar</h4>
+    <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+  </div>
+</div>
+
       <div class="produto" data-tipo="cabelo">
         <img src="img/produto2.jpg" alt="Condicionador Y" />
         <h3>Condicionador Y</h3>
@@ -80,52 +94,63 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Minha Loja</p>
+    <p>&copy; 2025 Finesse Hair Boutique</p>
   </footer>
 
+
+
+<!-- JS -->
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.getElementById('search-input');
-      const searchButton = document.getElementById('search-button');
-      const produtos = document.querySelectorAll('.produto');
-      const filtroBotoes = document.querySelectorAll('.filtro-btn');
-      const produtosLista = document.getElementById('produtos-lista');
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const produtos = document.querySelectorAll('.produto');
+    const filtroBotoes = document.querySelectorAll('.filtro-btn');
 
-      // Filtrar produtos por texto
-      searchButton.addEventListener('click', function() {
-        const searchTerm = searchInput.value.toLowerCase();
-
-        produtos.forEach(produto => {
-          const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-          if (nomeProduto.includes(searchTerm)) {
-            produto.style.display = 'block';
-          } else {
-            produto.style.display = 'none';
-          }
-        });
-      });
-
-      // Filtrar produtos por tipo
-      filtroBotoes.forEach(botao => {
-        botao.addEventListener('click', function() {
-          const tipo = this.getAttribute('data-tipo');
-
-          produtos.forEach(produto => {
-            const tipoProduto = produto.getAttribute('data-tipo');
-            if (tipo === 'todos' || tipo === tipoProduto) {
-              produto.style.display = 'block';
-            } else {
-              produto.style.display = 'none';
-            }
-          });
-
-          // Remover a classe 'ativo' de todos os botões
-          filtroBotoes.forEach(btn => btn.classList.remove('ativo'));
-          // Adicionar a classe 'ativo' ao botão clicado
-          this.classList.add('ativo');
-        });
+    // 🔎 Filtrar produtos por texto digitado
+    searchButton.addEventListener('click', function () {
+      const searchTerm = searchInput.value.toLowerCase();
+      produtos.forEach(produto => {
+        const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+        produto.style.display = nomeProduto.includes(searchTerm) ? 'block' : 'none';
       });
     });
+
+    // 🧼 Filtro por tipo/categoria
+    filtroBotoes.forEach(botao => {
+      botao.addEventListener('click', function () {
+        const tipo = this.getAttribute('data-tipo');
+        produtos.forEach(produto => {
+          const tipoProduto = produto.getAttribute('data-tipo');
+          produto.style.display = (tipo === 'todos' || tipo === tipoProduto) ? 'block' : 'none';
+        });
+
+        // Atualiza visual do botão ativo
+        filtroBotoes.forEach(btn => btn.classList.remove('ativo'));
+        this.classList.add('ativo');
+      });
+    });
+
+    // 👁️ Mostrar descrição ao clicar no botão "Ver Mais"
+    const botoesVerMais = document.querySelectorAll('.ver-mais-btn');
+    botoesVerMais.forEach(botao => {
+      botao.addEventListener('click', function () {
+        const descricao = this.nextElementSibling;
+        const isVisible = descricao.style.display === 'block';
+
+        // Fecha todas as outras descrições
+        document.querySelectorAll('.descricao-produto').forEach(div => {
+          div.style.display = 'none';
+        });
+
+        // Abre ou fecha a clicada
+        descricao.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+  });
+</script>
+
 
     
     
