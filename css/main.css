@@ -1,0 +1,449 @@
+/* main.css */
+   
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+   
+   body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+     line-height: 1.6;
+     background-image: url('fundo2.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     color: #333; /* Cor do texto principal */
+   }
+   
+   header {
+     background-color: #f19ec8; /* Fundo com transparência */
+     color: rgb(0, 0, 0);
+     padding: 1rem;
+     text-align: center;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+   }
+   
+   nav a {
+     color: rgb(0, 0, 0);
+     margin: 0 15px;
+     text-decoration: none;
+     font-weight: bold;
+     transition: color 0.3s ease; /* Transição suave na cor */
+   }
+   
+   nav a:hover {
+     color: #ff69b4; /* Rosa choque no hover */
+   }
+   
+   main {
+     padding: 2rem;
+     text-align: center;
+     background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+     margin: 2rem auto;
+     max-width: 1200px;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   footer {
+     background-color: #f19ec8;
+     color: #000000;
+     text-align: center;
+     padding: 1rem;
+     position: fixed;
+     width: 100%;
+     bottom: 0;
+     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+   }
+   
+   /* Responsivo */
+   @media (max-width: 600px) {
+     nav a {
+       display: block;
+       margin: 10px 0;
+     }
+   }
+   
+   .produtos {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 2rem;
+     margin-top: 2rem;
+   }
+   
+   .produto {
+     background-color: white;
+     padding: 1.5rem;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     text-align: center;
+     transition: transform 0.2s ease-in-out; /* Efeito de "levantar" */
+   }
+   
+   .produto:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+   }
+   
+   .produto img {
+     width: 100%;
+     height: auto;
+     max-height: 250px;
+     object-fit: contain;
+     margin-bottom: 1rem;
+     border-radius: 8px;
+   }
+   
+   .produto h3 {
+     font-size: 1.2rem;
+     margin-bottom: 0.5rem;
+     color: #555;
+   }
+   
+   .produto p {
+     font-size: 1rem;
+     color: #777;
+     margin-bottom: 1rem;
+   }
+   
+   .produto a {
+     display: inline-block;
+     margin-top: 1rem;
+     padding: 10px 20px;
+     background-color: #19af2d; /* Rosa choque */
+     color: white;
+     text-decoration: none;
+     border-radius: 5px;
+     font-weight: bold;
+     transition: background-color 0.3s ease;
+   }
+   
+   .produto a:hover {
+     background-color: #ff1493; /* Rosa mais escuro no hover */
+   }
+
+   .produtos-categoria {
+  margin-bottom: 2rem;
+}
+
+.produtos-categoria h3 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.produtos-categoria .produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.produto .categoria {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+/* ... Seu CSS existente ... */
+
+.filtro-produtos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtro-produtos h3 {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.filtro-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+  background-color: #ff69b4;
+  color: white;
+  border-color: #ff69b4;
+}
+
+/* ... Resto do seu CSS ... */
+   
+   .destaque {
+     background-color: rgba(255, 255, 255, 0.9);
+     padding: 2rem;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     margin-bottom: 2rem;
+   }
+   
+   .destaque h2 {
+     font-size: 2rem;
+     color: #333;
+     margin-bottom: 1rem;
+   }
+   
+   .destaque p {
+     font-size: 1.1rem;
+     color: #666;
+   }
+   
+   /* Se for manter o formulário de contato */
+   .form-contato {
+     max-width: 500px;
+     margin: 0 auto;
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     margin-top: 2rem;
+   }
+   
+   .form-contato input,
+   .form-contato textarea,
+   .form-contato button {
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 1rem;
+   }
+   
+   .form-contato button {
+     background-color: #ff69b4;
+     color: white;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+   
+   .form-contato button:hover {
+     background-color: #ff1493;
+   }
+   
+   /* Estilos para o link do WhatsApp no rodapé */
+   footer a {
+     color: white;
+     text-decoration: underline;
+     transition: color 0.3s ease;
+   }
+   
+   footer a:hover {
+     color: #25D366; 
+   }
+/* Estilos para o link do WhatsApp no rodapé */
+
+   /* Barra de Pesquisa dos Produtos*/
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Empurra para a direita */
+}
+
+#search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+}
+
+#search-button {
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #555;
+}
+   /* Barra de Pesquisa dos Produtos*/
+
+   /* ... Seu CSS existente ... */
+
+/* Banner Promocional */
+.banner {
+  background-color: #fce4ec; /* Rosa claro */
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.banner h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.btn-banner {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff69b4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-banner:hover {
+  background-color: #ff1493;
+}
+
+/* Seção de Categorias */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  
+}
+
+
+.categoria {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.categoria:hover {
+  transform: translateY(-5px);
+}
+
+.categoria img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.categoria h3 {
+  padding: 1rem;
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.categoria a {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.categoria a:hover {
+  background-color: #ddd;
+}
+
+/* Produtos em Destaque */
+.destaques {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.produto-destaque {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 300px;
+}
+
+.produto-destaque:hover {
+  transform: translateY(-5px);
+}
+
+.produto-destaque img {
+  width: 110%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.produto-destaque h3 {
+  padding: 1rem;
+  text-align: center;
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.produto-destaque .preco {
+  text-align: center;
+  color: #ff69b4;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.produto-destaque a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  background-color: #19af2d;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.produto-destaque a:hover {
+  background-color: #169427;
+}
+
+/* Sobre a Loja */
+.sobre {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+
+.produto a.descricao-btn {
+  background-color: #888;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.produto a.descricao-btn:hover {
+  background-color: #666;
+}
+

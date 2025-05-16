@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos - Finesse Hair Boutique</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Finesse Hair Boutique</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar produtos..." />
+        <button id="search-button">Buscar</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Nossos Produtos</h2>
+
+    <section class="filtro-produtos">
+      <h3>Filtrar por Tipo:</h3>
+      <button class="filtro-btn" data-tipo="todos">Todos</button>
+      <button class="filtro-btn" data-tipo="cabelo">Cabelo</button>
+      <button class="filtro-btn" data-tipo="pele">Pele</button>
+      <button class="filtro-btn" data-tipo="maquiagem">Maquiagem</button>
+    </section>
+
+    <section id="produtos-lista" class="produtos">
+      <div class="produto" data-tipo="cabelo">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Cabelo</p>
+        <a href="https://wa.me/5513996518153?text=Olá, quero comprar o Concentrado de Vitamina C" target="_blank">Comprar</a>
+        <a href="descricao-produto1.html" class="descricao-btn">Descrição</a>
+      </div>
+      <div class="produto" data-tipo="cabelo">
+        <img src="img/produto2.jpg" alt="Condicionador Y" />
+        <h3>Condicionador Y</h3>
+        <p class="categoria">Cabelo</p>
+        <a href="https://wa.me/SEU_NUMERO?text=Olá, quero comprar o Condicionador Y" target="_blank">Comprar</a>
+        <a href="descricao-produto2.html" class="descricao-btn">Descrição</a>
+      </div>
+      <div class="produto" data-tipo="pele">
+        <img src="img/produto3.jpg" alt="Hidratante Facial A" />
+        <h3>Hidratante Facial A</h3>
+        <p class="categoria">Pele</p>
+        <a href="https://wa.me/SEU_NUMERO?text=Olá, quero comprar o Hidratante Facial A" target="_blank">Comprar</a>
+        <a href="descricao-produto3.html" class="descricao-btn">Descrição</a>
+      </div>
+      <div class="produto" data-tipo="pele">
+        <img src="img/produto4.jpg" alt="Protetor Solar B" />
+        <h3>Protetor Solar B</h3>
+        <p class="categoria">Pele</p>
+        <a href="https://wa.me/SEU_NUMERO?text=Olá, quero comprar o Protetor Solar B" target="_blank">Comprar</a>
+        <a href="descricao-produto4.html" class="descricao-btn">Descrição</a>
+      </div>
+      <div class="produto" data-tipo="maquiagem">
+        <img src="img/produto5.jpg" alt="Base Líquida C" />
+        <h3>Base Líquida C</h3>
+        <p class="categoria">Maquiagem</p>
+        <a href="https://wa.me/SEU_NUMERO?text=Olá, quero comprar a Base Líquida C" target="_blank">Comprar</a>
+        <a href="descricao-produto5.html" class="descricao-btn">Descrição</a>
+      </div>
+      <div class="produto" data-tipo="maquiagem">
+        <img src="img/produto6.jpg" alt="Batom Matte D" />
+        <h3>Batom Matte D</h3>
+        <p class="categoria">Maquiagem</p>
+        <a href="https://wa.me/SEU_NUMERO?text=Olá, quero comprar o Batom Matte D" target="_blank">Comprar</a>
+        <a href="descricao-produto6.html" class="descricao-btn">Descrição</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Minha Loja</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('search-input');
+      const searchButton = document.getElementById('search-button');
+      const produtos = document.querySelectorAll('.produto');
+      const filtroBotoes = document.querySelectorAll('.filtro-btn');
+      const produtosLista = document.getElementById('produtos-lista');
+
+      // Filtrar produtos por texto
+      searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        produtos.forEach(produto => {
+          const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+          if (nomeProduto.includes(searchTerm)) {
+            produto.style.display = 'block';
+          } else {
+            produto.style.display = 'none';
+          }
+        });
+      });
+
+      // Filtrar produtos por tipo
+      filtroBotoes.forEach(botao => {
+        botao.addEventListener('click', function() {
+          const tipo = this.getAttribute('data-tipo');
+
+          produtos.forEach(produto => {
+            const tipoProduto = produto.getAttribute('data-tipo');
+            if (tipo === 'todos' || tipo === tipoProduto) {
+              produto.style.display = 'block';
+            } else {
+              produto.style.display = 'none';
+            }
+          });
+
+          // Remover a classe 'ativo' de todos os botões
+          filtroBotoes.forEach(btn => btn.classList.remove('ativo'));
+          // Adicionar a classe 'ativo' ao botão clicado
+          this.classList.add('ativo');
+        });
+      });
+    });
+
+    
+    
+  </script>
+</body>
+
+</html>
