@@ -153,16 +153,22 @@
 
 .filtro-produtos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .filtro-produtos h3 {
+  width: 100%;
   font-size: 1.2rem;
-  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
+
 
 .filtro-btn {
   padding: 0.5rem 1rem;
