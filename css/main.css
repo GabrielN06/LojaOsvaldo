@@ -491,13 +491,14 @@
   gap: 1rem;
 }
 
-/* Menu centralizado e lado a lado */
-.menu-centralizado {
+/* 
+centralizado e lado a lado */
+/* .menu-centralizado {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-}
+} */
 
 /* Responsividade da barra de pesquisa */
 .search-container {
