@@ -417,18 +417,38 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o título */
 }
 
-.sobre h2 {
-  font-size: 2rem;
-  color: #333;
+.sobre-conteudo {
+  display: flex;
+  flex-direction: column; /* Mobile first */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.foto-equipe {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.texto-sobre {
+  max-width: 800px;
+}
+
+.texto-sobre p {
   margin-bottom: 1rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.sobre p {
-  font-size: 1.1rem;
-  color: #666;
-}
+
 
 
 .descricao-produto {
