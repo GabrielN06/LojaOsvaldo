@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finalizar Pedido - Finesse Hair Boutique</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Finesse Hair Boutique</h1>
+    <nav class="nav-bar">
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="checkout">
+    <h2>Finalizar Pedido</h2>
+
+    <section id="resumo-pedido" class="resumo-pedido">
+      <h3>Resumo do Pedido</h3>
+      <div id="lista-produtos"></div>
+      <p><strong>Total:</strong> R$ <span id="total-final">0,00</span></p>
+    </section>
+
+    <form class="formulario-checkout">
+      <h3>Seus Dados</h3>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="endereco">Endereço completo:</label>
+      <textarea id="endereco" name="endereco" rows="3" required></textarea>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone">
+
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes" rows="2"></textarea>
+
+      <button type="submit" class="btn-banner">Finalizar Pedido</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Finesse Hair Boutique</p>
+  </footer>
+
+  <a href="carrinho.html" class="carrinho-topo">
+    🛒 <span id="contador-carrinho">0</span>
+  </a>
+
+  <script src="js/carrinhoContador.js"></script>
+  <script>
+    // Carregar resumo do carrinho
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const lista = document.getElementById("lista-produtos");
+    const totalEl = document.getElementById("total-final");
+
+    let total = 0;
+    if (carrinho.length === 0) {
+      lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    } else {
+      carrinho.forEach(prod => {
+        const item = document.createElement("p");
+        item.textContent = `${prod.nome} - R$ ${prod.preco.toFixed(2)} x ${prod.quantidade}`;
+        lista.appendChild(item);
+        total += prod.preco * prod.quantidade;
+      });
+    }
+    totalEl.textContent = total.toFixed(2);
+
+    // Simulação de envio
+    const form = document.querySelector(".formulario-checkout");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Pedido enviado com sucesso!");
+      localStorage.removeItem("carrinho");
+      window.location.href = "sucesso.html";
+    });
+  </script>
+</body>
+</html>

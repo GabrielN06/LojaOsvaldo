@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho - Finesse Hair Boutique</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Finesse Hair Boutique</h1>
+    <nav class="nav-bar">
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="carrinho">
+      <h2>Seu Carrinho</h2>
+      <div id="carrinho-itens" class="carrinho-itens">
+        <p>Seu carrinho está vazio.</p>
+      </div>
+
+      <div class="carrinho-resumo">
+        <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
+        <a href="checkout.html" class="btn-banner">Finalizar Pedido</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Finesse Hair Boutique</p>
+  </footer>
+
+  <script src="js/carrinho.js"></script>
+   <script src="js/carrinhoContador.js"></script>
+   
+  <a href="carrinho.html" class="carrinho-topo">
+  🛒 <span id="contador-carrinho">0</span>
+</a>
+
+</body>
+</html>

@@ -48,7 +48,7 @@
           <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
           <h3>Concentrado de Vitamina C</h3>
           <p class="categoria">Cabelo</p>
-          <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+          <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
           <button class="ver-mais-btn">Ver Mais</button>
 
          <div class="descricao-produto" style="display: none;">
@@ -71,7 +71,7 @@
         <img src="img/produto2.jpg" alt="Condicionador Y" />
         <h3>Condicionador Y</h3>
         <p class="categoria">Cabelo</p>
-        <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+       <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
         <button class="ver-mais-btn">Ver Mais</button>
          <div class="descricao-produto" style="display: none;">
            <h4>Descrição</h4>
@@ -93,7 +93,7 @@
          <img src="img/produto3.jpg" alt="Hidratante Facial A" />
           <h3>Hidratante Facial A</h3>
            <p class="categoria">Pele</p>
-           <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+           <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
            <button class="ver-mais-btn">Ver Mais</button>
          <div class="descricao-produto" style="display: none;">
            <h4>Descrição</h4>
@@ -115,7 +115,8 @@
          <img src="img/produto4.jpg" alt="Protetor Solar B" />
           <h3>Protetor Solar B</h3>
            <p class="categoria">Pele</p>
-          <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+          <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+
             <button class="ver-mais-btn">Ver Mais</button>
          <div class="descricao-produto" style="display: none;">
            <h4>Descrição</h4>
@@ -137,7 +138,8 @@
         <img src="img/produto5.jpg" alt="Base Líquida C" />
           <h3>Base Líquida C</h3>
             <p class="categoria">Maquiagem</p>
-              <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+              <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+
              <button class="ver-mais-btn">Ver Mais</button>
          <div class="descricao-produto" style="display: none;">
            <h4>Descrição</h4>
@@ -159,7 +161,7 @@
           <img src="img/produto6.jpg" alt="Batom Matte D" />
              <h3>Batom Matte D</h3>
                 <p class="categoria">Maquiagem</p>
-                   <button class="btn-add-carrinho" data-id="produto123">Adicionar ao Carrinho</button>
+                   <button class="btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
                   <button class="ver-mais-btn">Ver Mais</button>
          <div class="descricao-produto" style="display: none;">
            <h4>Descrição</h4>
@@ -234,15 +236,41 @@
       });
       });
       });
-      </script>
+      
 
 
 
+    document.querySelectorAll(".btn-add-carrinho").forEach(botao => {
+      botao.addEventListener("click", () => {
+        const nome = botao.dataset.nome;
+        const preco = parseFloat(botao.dataset.preco);
+        const imagem = botao.dataset.imagem;
 
-  
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        const itemExistente = carrinho.find(item => item.nome === nome);
+        if (itemExistente) {
+          itemExistente.quantidade += 1;
+        } else {
+          carrinho.push({ nome, preco, imagem, quantidade: 1 });
+        }
+
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+      });
+    });
+
+  </script>
+
 <a href="https://wa.me/5513996518153" class="whatsapp-float" target="_blank">
   <img src="imgs/iconeWhats.png" alt="WhatsApp" />
 </a>
+
+<a href="carrinho.html" class="carrinho-topo">
+  🛒 <span id="contador-carrinho">0</span>
+</a>
+
+<script src="js/carrinhoContador.js"></script>
 
   </body>
 
