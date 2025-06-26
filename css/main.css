@@ -763,3 +763,20 @@ centralizado e lado a lado */
   color: #444;
   margin-bottom: 2rem;
 }
+
+/* Botoes da pagina produtos */
+.botoes-produto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.botoes-produto .btn-banner {
+  flex: 1 1 auto;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* ---------------------------- */

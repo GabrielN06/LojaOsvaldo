@@ -1,3 +1,24 @@
+// Verifica se há produto enviado via URL
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const nome = params.get("produto");
+  const preco = parseFloat(params.get("preco"));
+  const imagem = params.get("imagem");
+
+  if (nome && !isNaN(preco) && imagem) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const existente = carrinho.find(p => p.nome === nome);
+    if (existente) {
+      existente.quantidade += 1;
+    } else {
+      carrinho.push({ nome, preco, imagem, quantidade: 1 });
+    }
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  }
+
+  carregarCarrinho(); // chama função principal
+});
+
 // Função para carregar os produtos do carrinho
 function carregarCarrinho() {
   const carrinhoItens = document.getElementById("carrinho-itens");
@@ -55,6 +76,3 @@ function removerItem(index) {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   carregarCarrinho();
 }
-
-// Iniciar ao carregar a página
-document.addEventListener("DOMContentLoaded", carregarCarrinho);
