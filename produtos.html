@@ -1,194 +1,242 @@
 <!DOCTYPE html>
-  <html lang="pt-br">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Produtos - Finesse Hair Boutique</title>
   <link rel="stylesheet" href="css/main.css" />
+  
 </head>
-
 <body>
   <header>
-
     <h1>Finesse Hair Boutique</h1>
-      <div class="nav-logo">
-    <img src="imgs/logo2.png" alt="Finesse Hair Boutique" />
-  </div>
-   <nav>
-  <div class="nav-container">
-   <div class="menu-links">
-      <a href="index.html">Home</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="contato.html">Contato</a>
-      <a href="resultados.html">Resultados</a>
+    <div class="nav-logo">
+      <img src="imgs/logo2.png" alt="Finesse Hair Boutique" />
     </div>
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="Buscar produtos..." />
-      <button id="search-button">Buscar</button>
-    </div>
-  </div>
-</nav>
+    <nav>
+      <div class="nav-container">
+        <div class="menu-links">
+          <a href="index.html">Home</a>
+          <a href="produtos.html">Produtos</a>
+          <a href="contato.html">Contato</a>
+          <a href="resultados.html">Resultados</a>
+        </div>
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Buscar produtos..." />
+          <button id="search-button">Buscar</button>
+        </div>
+      </div>
+    </nav>
   </header>
 
-    <main>
-         <h2>Nossos Produtos</h2>
+  <main>
+    <h2>Nossos Produtos</h2>
 
-        <section class="filtro-produtos">
-            <h3>Filtrar por Tipo:</h3>
-              <button class="filtro-btn" data-tipo="todos">Todos</button>
-              <button class="filtro-btn" data-tipo="cabelo">Cabelo</button>
-              <button class="filtro-btn" data-tipo="pele">Pele</button>
-              <button class="filtro-btn" data-tipo="maquiagem">Maquiagem</button>
-         </section>
+    <section class="filtro-produtos">
+      <h3>Filtrar por Tipo:</h3>
+      <button class="filtro-btn" data-tipo="todos">Todos</button>
+      <button class="filtro-btn" data-tipo="cabelo">Cabelo</button>
+      <button class="filtro-btn" data-tipo="pele">Pele</button>
+      <button class="filtro-btn" data-tipo="maquiagem">Maquiagem</button>
+    </section>
 
-         <!-- Produto 1 -->
     <section id="produtos-lista" class="produtos">
-        <div class="produto" data-tipo="cabelo">
-          <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
-          <h3>Concentrado de Vitamina C</h3>
-          <p class="categoria">Cabelo</p>
-         <div class="botoes-produto">
-            <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
-            <button class="btn-banner ver-mais-btn">Ver Mais</button>
-         </div>
-
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
-        </div>
-        </div>
-
-        <!-- Produto 2 -->
-
-        <div class="produto" data-tipo="cabelo">
-        <img src="img/produto2.jpg" alt="Condicionador Y" />
-        <h3>Condicionador Y</h3>
+      <div class="produto" data-tipo="cabelo">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
         <p class="categoria">Cabelo</p>
-       <div class="botoes-produto">
+        <div class="botoes-produto">
           <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
-          <button class="btn-banner ver-mais-btn">Ver Mais</button>
-        </div>
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
-        </div>
-        </div>
-
-        <!-- Produto 3 -->
-
-      <div class="produto" data-tipo="pele">
-         <img src="img/produto3.jpg" alt="Hidratante Facial A" />
-          <h3>Hidratante Facial A</h3>
-           <p class="categoria">Pele</p>
-           <div class="botoes-produto">
-            <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
             <button class="btn-banner ver-mais-btn">Ver Mais</button>
-         </div>
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
-        </div>
-        </div>
-
-        <!-- Produto 4 -->
-
-      <div class="produto" data-tipo="pele">
-         <img src="img/produto4.jpg" alt="Protetor Solar B" />
-          <h3>Protetor Solar B</h3>
-           <p class="categoria">Pele</p>
-         <div class="botoes-produto">
-            <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
-            <button class="btn-banner ver-mais-btn">Ver Mais</button>
-         </div>
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Produto 5 -->
-
-      <div class="produto" data-tipo="maquiagem">
-        <img src="img/produto5.jpg" alt="Base Líquida C" />
-          <h3>Base Líquida C</h3>
-            <p class="categoria">Maquiagem</p>
-              <div class="botoes-produto">
-            <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+      <div class="produto" data-tipo="pele">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Pele</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
             <button class="btn-banner ver-mais-btn">Ver Mais</button>
-         </div>
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Produto 6 -->
-
-        <div class="produto" data-tipo="maquiagem">
-          <img src="img/produto6.jpg" alt="Batom Matte D" />
-             <h3>Batom Matte D</h3>
-                <p class="categoria">Maquiagem</p>
-                   <div class="botoes-produto">
-            <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+       <div class="produto" data-tipo="pele">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Pele</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
             <button class="btn-banner ver-mais-btn">Ver Mais</button>
-         </div>
-         <div class="descricao-produto" style="display: none;">
-           <h4>Descrição</h4>
-             <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
-           <h4>Benefícios</h4>
-           <ul>
-               <li>Clareia manchas</li>
-               <li>Melhora a elasticidade</li>
-               <li>Previne sinais de idade</li>
-           </ul>
-                <h4>Como usar</h4>
-                <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
         </div>
-         </div>
+      </div>
+
+       <div class="produto" data-tipo="cabelo">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Cabelo</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
+            <button class="btn-banner ver-mais-btn">Ver Mais</button>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="produto" data-tipo="maquiagem">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Maquiagem</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
+            <button class="btn-banner ver-mais-btn">Ver Mais</button>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ <div class="produto" data-tipo="pele">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Pele</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
+            <button class="btn-banner ver-mais-btn">Ver Mais</button>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              <li>Como usar</li>
+                <li>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="produto" data-tipo="pele">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Pele</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
+            <button class="btn-banner ver-mais-btn">Ver Mais</button>
+            <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="produto" data-tipo="pele">
+        <img src="imgs/concentradoVtC.jpg.jpeg" alt="Concentrado de Vitamina C" />
+        <h3>Concentrado de Vitamina C</h3>
+        <p class="categoria">Pele</p>
+        <div class="botoes-produto">
+          <button class="btn-banner btn-add-carrinho" data-nome="Concentrado de Vitamina C" data-preco="49.90" data-imagem="imgs/concentradoVtC.jpg.jpeg">Adicionar ao Carrinho</button>
+          <div class="ver-mais-wrapper">
+            <button class="btn-banner ver-mais-btn">Ver Mais</button>
+           <div class="descricao-produto">
+              <h4>Descrição</h4>
+              <p>Sérum facial com Vitamina C para brilho e firmeza.</p>
+              <h4>Benefícios</h4>
+              <ul>
+                <li>Clareia manchas</li>
+                <li>Melhora a elasticidade</li>
+                <li>Previne sinais de idade</li>
+              </ul>
+              <h4>Como usar</h4>
+              <p>Aplicar 3 a 5 gotas no rosto limpo, diariamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </section>
-</main>
+  </main>
 
   <footer>
     <p>&copy; 2025 Finesse Hair Boutique</p>
@@ -203,7 +251,6 @@
   </a>
 
   <script src="js/carrinhoContador.js"></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const searchInput = document.getElementById('search-input');
@@ -235,9 +282,14 @@
       botoesVerMais.forEach(botao => {
         botao.addEventListener('click', function () {
           const descricao = this.nextElementSibling;
-          const isVisible = descricao.style.display === 'block';
-          document.querySelectorAll('.descricao-produto').forEach(div => div.style.display = 'none');
-          descricao.style.display = isVisible ? 'none' : 'block';
+          // Toggle the class for expanding/collapsing the description
+          descricao.classList.toggle('show-description'); 
+          
+          if (descricao.classList.contains('show-description')) {
+            this.textContent = 'Ver Menos';
+          } else {
+            this.textContent = 'Ver Mais';
+          }
         });
       });
 

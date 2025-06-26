@@ -43,6 +43,23 @@
   width: 110px;
 }
 
+/* Nova regra para centralizar a barra de pesquisa e menu */
+nav .nav-container {
+  display: flex;
+  flex-direction: column; /* Para empilhar menu e busca em telas pequenas */
+  align-items: center; /* Centraliza horizontalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente em flex container */
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 10px auto; /* Centraliza horizontalmente e adiciona margem vertical */
+}
+/* Fim das novas regras */
+
+
    main {
      padding: 2rem;
      text-align: center;
@@ -67,11 +84,37 @@
    /* Responsivo */
    @media (max-width: 600px) {
      
-    a {
-       display: block;
-       margin: 10px 0;
-     }
-   }
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza os links verticalmente */
+      margin-bottom: 10px; /* Espaço entre os links e a barra de pesquisa */
+    }
+
+    .nav-logo img {
+      height: 90px; /* Ajuste o tamanho do logo para telas menores */
+      width: 90px;
+    }
+
+    /* Botoes da pagina produtos */
+    .produto {
+      padding: 1rem;
+      margin: 0;
+    }
+    .botoes-produto {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .botoes-produto .btn-banner {
+      flex: 1 1 48%;
+      min-width: 120px;
+      max-width: 160px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+   } /* Fechamento correto da media query */
    
    .produtos {
      display: grid;
@@ -151,12 +194,31 @@
   margin-top: 1rem;
 }
 
-.produto .categoria {
-  font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 0.25rem;
+ .produto .categoria {
+  text-align: center;
+  display: block;
+  margin: 0.5rem auto;
+  font-size: 0.9rem;
+  color: #777;
 }
 
+
+/* Descrição do Produto - Expandir/Retrair */
+.descricao-produto {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  padding: 0 15px; /* Remover padding vertical para max-height funcionar bem */
+  margin-top: 10px;
+  border-radius: 6px;
+  max-height: 0; /* Começa escondido */
+  overflow: hidden; /* Esconde o conteúdo extra */
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Transição suave na altura e padding */
+}
+
+.descricao-produto.show-description {
+  max-height: 500px; /* Altura suficiente para mostrar o conteúdo, ajuste se necessário */
+  padding: 15px; /* Adiciona o padding quando expandido */
+}
 
 
 .filtro-produtos {
@@ -194,7 +256,6 @@
   border-color: #ff69b4;
 }
 
-
    
    .destaque {
      background-color: rgba(255, 255, 255, 0.9);
@@ -228,12 +289,6 @@
 /* Estilos para o link do WhatsApp no rodapé */
 
    /* Barra de Pesquisa dos Produtos*/
-.search-container {
-  display: flex;
-  align-items: center;
-  margin-left: auto; /* Empurra para a direita */
-}
-
 #search-input {
   padding: 8px;
   border: 1px solid #ccc;
@@ -254,7 +309,8 @@
 #search-button:hover {
   background-color: #555;
 }
-   /* Barra de Pesquisa dos Produtos*/
+/* Barra de Pesquisa dos Produtos*/
+
 
 /* Banner Promocional */
 .banner {
@@ -291,6 +347,7 @@
   background-color: #ff1493;
 }
 
+
 /* Seção de Categorias */
 .categorias {
   display: flex;
@@ -312,7 +369,6 @@
   max-width: 100%;
 }
 
-
 .categoria:hover {
   transform: translateY(-5px);
 }
@@ -321,7 +377,7 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  max-height: 180px; 
+  max-height: 180px;
   object-fit: contain;
   padding: 1rem;
   background-color: #fff;
@@ -351,6 +407,7 @@
   background-color: #ddd;
 }
 
+
 /* Produtos em Destaque */
 .destaques-container {
   margin-bottom: 2rem;
@@ -377,7 +434,9 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  width: 300px;
+  width: 280px;
+  flex: 1 1 280px;
+  max-width: 100%;
 }
 
 .produto-destaque:hover {
@@ -385,286 +444,57 @@
 }
 
 .produto-destaque img {
-  width: 110%;
-  height: 230px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  padding: 1rem;
+  background-color: #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .produto-destaque h3 {
   padding: 1rem;
   text-align: center;
   color: #333;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
-.produto-destaque .preco {
-  text-align: center;
-  color: #ff69b4;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.produto-destaque a {
+.produto-destaque .btn-banner {
   display: block;
-  padding: 0.75rem 1.5rem;
-  background-color: #19af2d;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.produto-destaque a:hover {
-  background-color: #169427;
-}
-
-/* Sobre a Loja */
-.sobre {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centraliza o título */
-}
-
-.sobre-conteudo {
-  display: flex;
-  flex-direction: column; /* Mobile first */
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.foto-equipe {
-  width: 300px;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.texto-sobre {
-  max-width: 800px;
-}
-
-.texto-sobre p {
-  margin-bottom: 1rem;
-  color: #444;
+  width: calc(100% - 2rem);
+  margin: 1rem auto;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  line-height: 1.6;
 }
-
-
-
-
-.descricao-produto {
-  background-color: #f3f3f3;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 6px;
-}
-
-
-/* Contato zap */
-
-.contato-whatsapp {
-  text-align: center;
-  margin: 2rem auto;
-}
-
-.qr-code {
-  width: 200px;
-  height: auto;
-  margin: 1rem 0;
-}
-
-/* Contato zap */
-
-/* Centraliza os links no desktop e mobile */
-.nav-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* 
-centralizado e lado a lado */
-/* .menu-centralizado {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-} */
-
-/* Responsividade da barra de pesquisa */
-.search-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-#search-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
-  width: 250px;
-  max-width: 90%;
-}
-
-#search-button {
-  padding: 8px 12px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#search-button:hover {
-  background-color: #555;
-}
-
-.nav-bar {
-  display: flex;
-   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.menu-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
 .whatsapp-float {
   position: fixed;
+  width: 60px;
+  height: 60px;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .whatsapp-float img {
-  width: 60px;
-  height: 60px;
-  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
-
-.whatsapp-float img:hover {
-  transform: scale(1.1);
-}
-
-.galeria-resultados {
-  text-align: center;
-  margin: 3rem 0;
-}
-
-.galeria-resultados h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.galeria-resultados p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.galeria-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.antes-depois {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.antes-depois img {
-  width: 250px;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* CARRINHO */
-
-.carrinho {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.carrinho h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.carrinho-itens {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.item-carrinho {
-  background-color: white;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.item-carrinho img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.item-carrinho .info {
-  flex: 1;
-  text-align: left;
-}
-
-.item-carrinho .quantidade {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.item-carrinho button {
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.carrinho-resumo {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-
 
 .carrinho-topo {
   position: fixed;
@@ -672,37 +502,136 @@ centralizado e lado a lado */
   right: 20px;
   background-color: #ff69b4;
   color: white;
-  padding: 10px 14px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-
-.carrinho-topo span {
-  background-color: white;
-  color: #ff69b4;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px 6px;
+  padding: 10px 15px;
   border-radius: 50%;
-  margin-left: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
 }
 
-/* CARRINHO */
+#contador-carrinho {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
 
+/* Estilos para a página de contato */
+.contato-whatsapp {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.contato-whatsapp h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contato-whatsapp p {
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.qr-code {
+  width: 150px;
+  height: 150px;
+  margin: 1.5rem auto;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contato-whatsapp a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contato-whatsapp a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para a página de resultados */
+.galeria-resultados {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.galeria-resultados h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.galeria-resultados p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.antes-depois {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.antes-depois img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.antes-depois img:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilos para a página de checkout */
 .checkout {
-  padding: 2rem 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .resumo-pedido {
-  background-color: #fff;
+  background-color: #f9f9f9;
   padding: 1rem;
-  margin-bottom: 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -747,36 +676,18 @@ centralizado e lado a lado */
 
 .pagina-sucesso {
   text-align: center;
-  padding: 4rem 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .pagina-sucesso h2 {
-  font-size: 2rem;
-  color: #4BB543;
+  color: #333;
   margin-bottom: 1rem;
 }
 
 .pagina-sucesso p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
-
-/* Botoes da pagina produtos */
-.botoes-produto {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.botoes-produto .btn-banner {
-  flex: 1 1 auto;
-  min-width: 140px;
-  text-align: center;
-}
-
-/* ---------------------------- */
